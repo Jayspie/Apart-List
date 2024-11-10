@@ -1,52 +1,114 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Apartment-List</title>
-        <link rel="stylesheet" type="text/css" href="index.css"/>
-    </head>
-           
-   <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Apartment-List</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body>
+    <div id="center"></div>
     <nav>
+        <div id="dad">
+            <div id="mySidenav" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#how-to" id="side-how" class="navbar">How To?</a>
+                <a href="#" class="navbar" target="_blank">Github</a>
+            </div>
+        </div>
+        <img src="apartment-excel-removebg-preview.png" alt="logo" />
+        <span id="openbtn" onclick="openNav()">&#9776;</span>
         <ul id="logo">
-            <li><img src="apartment-excel-removebg-preview.png" alt="logo"/><h1>Apartment-Excel</h1></li>
-        </ul>
-    
-        <ul id="tags">
-            <li id="ah"><a  target="_blank" href="">Why?</a></li>
-            <li id="gh"><a target="_blank" href="">Github</a></li>
+            <li class="navlink" id="why"><a href="#how-to">How To?</a></li>
+            <li class="navlink" id="git"><a target="_blank" href="">Github</a></li>
         </ul>
     </nav>
 
     <main class="demo-wrap">
-        <img class="demo-bg" src="DSCF1982_3_4_5_6-copy-2-14f37521d6b90eddfb8a6d576de4c3c6 - Copy.jpg" alt="">
-        <h1 class="content">Simplify Your Apartment Hunt: Convert Listings from Apartments.com to Excel Fast.</h1>
-    
+        <img id="main_img" src="DSCF1982_3_4_5_6-copy-2-14f37521d6b90eddfb8a6d576de4c3c6 - Copy.jpg" alt="">
+        <h1 class="content">Apartment Hunting Simplfied - One Sheet At A Time</h1>
+
         <button id="downloadBtn" class="content">Download File</button>
-        <p id="ip" class="content"></p>
     </main>
-   </body>
+
+    <h1 id="example" class="content">Example Excel Sheets</h1>
+    <ul id="example_sheet">
+        <li>
+            <div>
+                <img src="LosAngeles2.jpg" alt="Los Angles">
+                <h3>Los Angeles</h3>
+                <a class="example_link" href="view/apartment-excel-removebg-preview.png" download>
+                    <h3>Download</h3>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img id="houston" src="Skyline-Houston-Texas.webp" alt="" height="788px">
+                <h3>Houston</h3>
+                <a class="example_link" href="view/apartment-excel-removebg-preview.png" download>
+                    <h3>Download</h3>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img id="new_york" src="photo0jpg.jpg" alt="">
+                <h3>New York</h3>
+                <a class="example_link" href="view/apartment-excel-removebg-preview.png" download>
+                    <h3>Download</h3>
+                </a>
+            </div>
+        </li>
+    </ul>
+</body>
 
 
-   <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            fetch('https://ipapi.co/ip/')
-                .then(function(response) {
-                    response.text().then(txt => {
-            // Dynamically create the <a> tag and set the href
-            const a = document.createElement('a');
-            a.href = `/download/:${txt}`;  // Dynamic link to the file download endpoint
-            a.download = 'apartment_list.xlsx';  // Optional: the name for the downloaded file
-            a.click();
-        });
+<script>
+    //Reloads the page
+    for (let i = 0; i == 1; i++) {
+        location.reload();
+    }
+
+    const viewportWidth = window.outerWidth
+    function openNav() {
+        document.getElementById("mySidenav").style.display = "block";
+        document.getElementById("mySidenav").style.width = "55%";
+
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    //show the menu or not depending on the viewport width
+    if (viewportWidth > 430) {
+        document.getElementById("openbtn").style.display = "none"
+    }
+    else if (viewportWidth <= 430) {
+        document.getElementById("openbtn").style.display = "block"
+        document.getElementById("logo").style.display = "none"
+    }
+
+    //makes the file avlible to download
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+        fetch('https://ipapi.co/ip/')
+            .then(function (response) {
+                response.text().then(txt => {
+                    // Dynamically create the <a> tag and set the href
+                    const a = document.createElement('a');
+                    a.href = `/download/:${txt}`;  // Dynamic link to the file download endpoint
+                    a.download = 'apartment_list.xlsx';  //the name for the downloaded file
+                    a.click();
+                });
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
     })
-    .catch(function(error) {
-    console.log(error)
-  });
-  })
 
-   </script>
-           
-</html>test
+</script>
+
+</html>

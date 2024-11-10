@@ -37,8 +37,8 @@ If you just want to say Hi feel free to do so.
 ## To-do
 This is a list things that still need to be done.
 
-- desktop/laptop frontend 
-- moblie frontend
+- ~~desktop/laptop frontend~~ 
+- ~~moblie frontend~~
 - deploy to Hostgator or Hoststinger. Still looking
 - have it run faster
 - make houses, condos, and townhomes available

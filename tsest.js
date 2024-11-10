@@ -1,6 +1,6 @@
-const fs = require('fs').promises;
-const apple = require('node:fs');
-const { join } = require('path');
+//const fs = require('fs').promises;
+import apple from 'node:fs';
+//const { join } = require('path');
 /*function getFilesizeInBytes(filename) {
   var stats = fs.statSync(filename);
   var fileSizeInBytes = stats.size;
@@ -34,13 +34,52 @@ else{
     console.log('yo')
   }
   }, interval);*/
-  fetch/*Ruff Ruffman*/('https://ipapi.co/ip/')
-  .then(function(response) {
-      response.text().then(txt => {
-// Dynamically create the <a> tag and set the href
-console.log(txt)
-});
-})
-.catch(function(error) {
-console.log(error)
-});
+  //const fs = require('fs');
+  //const path = require('path');
+  
+  /*function getFolders(dirPath) {
+    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  
+    const folders = entries.filter(entry => entry.isDirectory()).map(entry => entry.name);
+  
+    return folders;
+  }
+  
+  const directoryPath = './'; // Replace with the directory you want to search
+  const folders = getFolders(directoryPath);
+  
+  var numbers=Number(folders[2][1])
+  if (Number.isInteger(numbers)==true)(
+    console.log("true")
+  )
+
+  for (let i = 0; i<folders.length; i++) {
+    var to_number= Number(folders[i][1])
+    if (Number.isInteger(to_number)==true)(
+      apple.rm(`./${folders[i]}`,{ recursive: true}, err => {
+        if (err) {
+          throw err;
+        }
+      })
+    )
+  }*/
+
+    apple.readdir('./_df', (err, files) => {
+      if (err) {
+        console.error('Error reading directory:', err);
+        return;
+      }
+      if(files.length>0){
+        console.log("yes")
+      }else{
+        console.log("noo")
+      }
+    });
+
+    for (let i = 0; i<1; i--) {
+      var count = 1
+      count+=1
+      console.log(count)
+    }
+
+
