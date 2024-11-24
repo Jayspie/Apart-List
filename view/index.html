@@ -1,51 +1,120 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-   <head>
-       <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       <title>Apartment-List</title>
-       <link rel="stylesheet" type="text/css" href="index.css"/>
-   </head>
-           
-   <body>
-        <nav>
-            <ul id="logo">
-                <li><img src="apartment-excel-removebg-preview.png" alt="logo"/><h1>Apartment-Excel</h1></li>
-            </ul>
-        
-            <ul id="tags">
-                <li id="ah"><a  target="_blank" href="">Why?</a></li>
-                <li id="gh"><a target="_blank" href="">Github</a></li>
-            </ul>
-        </nav>
 
-        <main class="demo-wrap">
-            <img class="demo-bg" src="DSCF1982_3_4_5_6-copy-2-14f37521d6b90eddfb8a6d576de4c3c6 - Copy.jpg" alt="">
-            <h1 class="content">Simplify Your Apartment Hunt: Convert Listings from Apartments.com to Excel Fast.</h1>
-            <form method="post" action="/link"class="content">
-                <input type="text" id="link" name="link" placeholder="Link">
-                <input type="text" id="ip" name="ip" placeholder="ip">
-                <input type="submit" id="submit" value="Submit" >
-            </form>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Apartment-List</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body>
+    <div id="center"></div>
+    <nav>
+        <div id="dad">
+            <div id="mySidenav" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#how-to" id="side-how" class="navbar">How To?</a>
+                <a href="https://github.com/Jayspie/Apart-List" class="navbar" target="_blank">Github</a>
+            </div>
+        </div>
+        <img src="apartment-excel-removebg-preview.png" alt="logo" />
+        <span id="openbtn" onclick="openNav()">&#9776;</span>
+        <ul id="logo">
+            <li class="navlink" id="why"><a href="#how-to">How To?</a></li>
+            <li class="navlink" id="git"><a target="_blank" href="https://github.com/Jayspie/Apart-List">Github</a></li>
+        </ul>
+    </nav>
+    <main class="demo-wrap">
+        <img id="main_img" src="DSCF1982_3_4_5_6-copy-2-14f37521d6b90eddfb8a6d576de4c3c6 - Copy.jpg" alt="">
+        <h1 class="content">Apartment Hunting Simplfied - One Sheet At A Time</h1>
+        <form method="post" action="/link" class="content" id="form">
+            <input type="text" id="link" name="link" placeholder="Link">
+            <input type="text" id="ip" name="ip" placeholder="ip">
+            <input type="submit" id="submit" value="Submit" onclick="loader()">
+        </form>
+        <div id="loader"></div>
+    </main>
+    <div id="how-to">
+        <h1>How To Use</h1>
+        <p>Just provide a link from Apartments.com, and we’ll gather all the details for you, neatly packaged in an
+            Excel file. <br><br>
+            (Please note: only apartment listings are supported—no houses, condos, or townhomes.)</p>
+        <h2>Example Link</h2>
+        <ul>
+            <li>&check; https://www.apartments.com/apartments/houston-tx/</li>
+            <li>&cross; https://www.apartments.com/apartments-condos/los-angeles-ca/</li>
+            <li>&cross; https://www.apartments.com/condos/new-york-ny/</li>
+            <li>&cross; www.apartments.com/chicago-il/</li>
+        </ul>
+    </div>
+
+    <h1 id="example" class="content">Example Sheets</h1>
+    <ul id="example_sheet">
+        <li>
+            <div>
+                <img src="LosAngeles2.jpg" alt="Los Angles">
+                <h3>Los Angeles</h3>
+                <a class="example_link" href="https://docs.google.com/spreadsheets/d/1eHmzz7LyJBLjsr0MisL76yaRGDEqX26cEhDzNViR258/edit?usp=sharing" target="_blank">
+                    <h3>View</h3>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="Skyline-Houston-Texas.webp" alt="">
+                <h3>Houston</h3>
+                <a class="example_link" href="https://docs.google.com/spreadsheets/d/13QA8P8w7a6DJSbiJ0xgPm_5f8CKvoHJWZBa4sRuMPX4/edit?usp=sharing" target="_blank">
+                    <h3>View</h3>
+                </a>
+            </div>
+        </li>
+        <li id="newyork">
+            <div id="newyork">
+                <img src="photo0jpg.jpg" alt="">
+                <h3>New York</h3>
+                <a class="example_link" href="https://docs.google.com/spreadsheets/d/1PskESxW8R9i1Ticd_jEjVSfWb69xle1sTVAQ5mEOmEg/edit?usp=sharing" target="_blank">
+                    <h3>View</h3>
+                </a>
+            </div>
+        </li>
+    </ul>
+
+</body>
+
+<script src="static/file.js"></script>
+
+<script>
+    //Reloads the page
+
+    //shows the loader when actived
+    function loader() {
+        document.getElementById("form").style.display = "none"
+        document.getElementById("loader").style.display = "block";
+    }
+
+    const viewportWidth = window.outerWidth
+    function openNav() {
+        document.getElementById("mySidenav").style.display = "block";
+        document.getElementById("mySidenav").style.width = "55%";
+
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    //show the menu or not depending on the viewport width
+    if (viewportWidth > 430) {
+        document.getElementById("openbtn").style.display = "none"
+    }
+    else if (viewportWidth <= 430) {
+        document.getElementById("openbtn").style.display = "block"
+        document.getElementById("logo").style.display = "none"
+    }
+
+</script>
 
 
-        </main>
-
-   </body>
-
-   <script src="static/file.js"></script>
-
-   <script>
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * max);
-        }
-
-        const user_id=getRandomInt(500000)
-
-
-
-   </script>
-   
-           
 </html>

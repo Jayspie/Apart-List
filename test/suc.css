@@ -1,3 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 body{
-    background-color: red;
-}
+    font-size: 64px;
+   /* background-image: url("DSCF1982_3_4_5_6-copy-2-14f37521d6b90eddfb8a6d576de4c3c6.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100% 75%;*/
+    font-family: "Josefin Sans";
+    padding:0;
+    margin:0;
+
+} 
+
+nav{
+    width: 99%;
+    height: 50%;
+  }
+    nav img{
+      display: block;
+      margin: 0 auto;
+    }
+    nav ul{
+      list-style: none;
+      width: 45%;
+      margin:-4% 53%;
+      text-align: center;
+    }
+      nav li {
+        width: 20%;
+        display: inline-block;
+        text-align: center;
+        font-size: 0.45em;
+        margin-right: 15%;
+      }
+      #why{
+        margin-left: 20%;
+      }
+
+      #git{
+        width: 20%!important;
+        background-color: #72B944;
+        border-radius: 999px;
+        
+      }
+      .navlink a:link{
+        color:black;
+        text-decoration: none;
+      }
+  
+      .navlink a:visited{
+        color:black;
+        text-decoration: none;
+      }
+
+      main{
+        background-color: rgba(0, 0, 0, 1);
+        margin:5% 0%;
+        width: 99.9%;
+        height:600px;
+         border:2px solid transparent;
+      }
+        #main_img{
+          width: 99.99%;
+          height:600px;
+          opacity: 0.6;
+          position: absolute;
+        }
+        .content{
+          position: relative;
+        }
+        main h1{
+          color: #FFFFFF;
+          font-size: 0.7em;
+          width: 65%;
+          text-align: center;
+          margin: 6% auto;
+        }
+          #downloadBtn{
+            margin:0 43%;
+            width: 15%;
+            text-align: center;
+            color: black;
+            font-size: .4em;
+            background-color: #72B944;
+            border-radius: 999px;
+            border: none;
+          }
+
+          #example{
+            color: black;
+            margin-top: 15% auto;
+            font-size: 0.7em;
+            text-align: center;
+          }
+    
+    
+    
+          #example_sheet{
+            text-align: center;
+            list-style: none;
+            margin-top: 5%
+          }
+    
+          #example_sheet li{
+            border:2px black solid;
+            width: 20%;
+            display: inline-block;
+            font-size: .4em;
+            margin-right:5%;
+            box-shadow: 5px 5px 5px ;
+          }
+          #example_sheet img{
+            height: 450px; /* Set the desired height */
+            width: 100%; /* Keeps aspect ratio */
+            object-fit: cover; 
+          }
+          .example_link {
+            text-decoration: none;
+          }
+          .example_link h3{
+            margin-left: 25%;
+            width: 50%;
+            height: 50%;
+            text-align: center;
+            padding-top:2% ;
+            color: black;
+            font-size: .8em;
+            background-color: #72B944;
+            border-radius: 99px;
+          }
+          .example_link:visited{
+            background-color: #72B944;
+            font-family: "Josefin Sans";
+            text-decoration: none;
+          }
+          #houston{
+            height: 310px;
+          }
+          #new_york{
+            height: 310px;
+          }
