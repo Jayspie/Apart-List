@@ -1,3 +1,11 @@
+# Project Discontinued
+
+## Important Update:
+The Apart-List project has been discontinued due to a legal request from Apartments.com. They requested that I stop using their content, as it violated their terms of use. To comply with their request and avoid potential legal action, I have taken the project offline and ceased further development.
+
+I appreciate the support and interest from everyone who explored this project. If you have any questions or would like to learn more about the technical aspects of the project, feel free to reach out to me.
+
+Thank you for your understanding!
 # Apart-List
 
 Making apartment hunting a bit easier.
